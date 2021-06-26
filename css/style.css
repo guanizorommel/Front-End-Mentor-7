@@ -18,6 +18,11 @@ body {
 
     min-height: 100vh;
     min-width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 }
 
 /*Typograhpies and Buttons*/
@@ -66,13 +71,50 @@ img {
     max-width: 100%;
 }
 
+/*Icons*/
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+
+    padding-right: 10%;
+
+    position: absolute;
+    top: 100;
+    left: 100;
+    bottom: 0;
+    right:  0;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+
+    margin-left: 10px;
+    
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+li:hover {
+    border-color: var(--soft-magenta);
+    color: var(--soft-magenta);
+    transition: 0.3s;
+}
+
+
 /*Layout*/
 .container {
     display: flex;
     align-items: center;
+    align-content: center;
     justify-content: center;
-    margin: 0 auto;
     padding: 50px;
+    position: relative;
 }
 
 .left-content {  
@@ -89,5 +131,39 @@ img:nth-child(2){
 
 .right-content {
     flex: 2 1 100%;
-    padding-left: 35px;
+    padding-left: 30px;
+}
+
+/*Media Query*/
+@media (max-width:850px) {
+    body {
+        background-image: url(../images/bg-mobile.svg);
+        background-color: var(--violet);
+        background-position: -10px -50px;
+        background-size: contain;
+    }
+    
+    .container {
+        flex-direction: column;
+        padding-top: 0px;
+    }
+
+    .right-content {
+        text-align: center;
+        padding-left: 0px;
+        padding-top: 50px;
+        padding-bottom: 100px;
+    }
+
+    h1, p {
+        max-width: 100%;
+    }
+
+    ul {
+        width: 100%;
+        justify-content: center;
+        padding: 0;
+    }
+
+    
 }
